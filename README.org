@@ -1,15 +1,5 @@
-* Header
-** Some notes
-   Lol what am i even doing
-** OH YEAH
-*** mkay
-*** that's bad
-    nope
-*** mkay
-**** nope
-     lkjsflkjsflksdflkjsdflkjx
-     |       |  a | cat | dog               |
-     |-------+----+-----+-------------------|
-     | value | 23 | 323 | this is some text |
-     |       |    |     |                   |
-     |-------+----+-----+-------------------|
+* PyBattleship
+  Command Line battleship game, created as a learning experience
+** TODO GUI
+** TODO Turn Logic
+** TODO Network Multiplay
