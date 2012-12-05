@@ -8,3 +8,8 @@
 *** mkay
 **** nope
      lkjsflkjsflksdflkjsdflkjx
+     |       |  a | cat | dog               |
+     |-------+----+-----+-------------------|
+     | value | 23 | 323 | this is some text |
+     |       |    |     |                   |
+     |-------+----+-----+-------------------|
