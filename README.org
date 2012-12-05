@@ -1,5 +1,6 @@
 * PyBattleship
   Command Line battleship game, created as a learning experience
-** TODO GUI
-** TODO Turn Logic
-** TODO Network Multiplay
+** Future Features
+*** GUI
+*** Turn Logic
+*** Network Multiplayer
