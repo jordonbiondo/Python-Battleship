@@ -11,7 +11,7 @@ class Player(object):
         x = int(raw_input())
         y = int(raw_input())
         return Point(x, y)
+    
 
-a = Player()
 
-print a.giveInstruction()
+    
