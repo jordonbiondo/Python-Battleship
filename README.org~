@@ -1,10 +1,6 @@
-* Header
-** Some notes
-   Lol what am i even doing
-** OH YEAH
-*** mkay
-*** that's bad
-    nope
-*** mkay
-**** nope
-     lkjsflkjsflksdflkjsdflkjx
+* PyBattleship
+  Command Line battleship game, created as a learning experience
+** Future Features
+*** GUI
+*** Turn Logic
+*** Network Multiplayer
