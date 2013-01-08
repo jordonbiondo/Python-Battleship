@@ -1,23 +1,23 @@
 import math
 
 def feq(x,y):
-    "float equality because python sucks"
+    """float equality because python sucks"""
     return abs(x-y) <= .0000001
 
 
 class Point(object):
     """2D point utility class"""
-    
-    x = 0.0
-    
-    y = 0.0
-    
+
     def __init__(self, x=0.0, y=0.0):
+        """Init from x, y"""
         self.x = x
         self.y = y
 
+
     def __eq__(self, other):
+        """equality: coords are equal"""
         return (feq(self.x, other.x) and feq(self.y,other.y))
+    
 
     def __add__(self, p2):
         """add points"""
@@ -26,28 +26,8 @@ class Point(object):
 
     def __sub__(self, p2):
         """subtract points"""
-        p2.negate()
-        return self + p2
+        return self + p2.negated()
 
-    
-    def __mul__(self, scalar):
-        if isinstance(scalar,(int, long, float, complex)):
-            return Point(self.x * scalar, self.y * scalar)
-        else:
-            raise TypeError("unsupported operand type(s) for *: '{}' and '{}'").format(self.__class__, type(other))
-
-        
-    def negate(self):
-        """self * -1"""
-        self = self * -1.0
-
-    def __str__(self):
-        """(x,y)"""
-        return '(%f,%f)' % (self.x,  self.y)
-
-
-class Vector(Point):
-    """2D Vector utility class derived from point"""
     
     def magnitude(self):
         return math.sqrt(self.x**2.0 + self.y**2.0)
@@ -56,36 +36,51 @@ class Vector(Point):
     def isNormal(self):
         return (feq(self.magnitude(), 1.0))
 
-        
-    def normalize(self):
+            
+    def normalized(self):
         scalar = 1/self.magnitude()
-        self.x = self.x * scalar
-        self.y = self.y * scalar
+        return Point(self.x * scalar, self.y * scalar)
+
+    
+    def normalize(self):
+        self = self.normalized()
+
+
+    def dot(self, other):
+        return other.x*self.x + other.y*self.y
+
+
+    def scale(self, scalar):
+        self = self.scaled(scalar)
+
+
+    def scaled(self, scalar):
+        return Point(self.x * scalar, self.y * scalar)
 
 
     def __mul__(self, other):
         if isinstance(other, (Point)):
-            return other.x*self.x + other.y*self.y
+            return self.dot(other)
         else:
-            return super(Vector, self).__mul__(other)
-
-        
-    def cross(self, other):
-        print "NOT IMPLEMENTED"
-
-class Rect(object):
-    "Rectangle class"
-    
-    def __init_(self,  width=1, height=1):
-        self.width = 0.0
-        self.height = 0.0
-
-    def area(self):
-        return self.width*self.height
-
-    def perimeter(self):
-        return self.width*2 + self.height*2
-        
-
+            self.scale(other)
 
     
+    def __div__(self, scalar):
+        return self * (1.0/scalar)
+
+        
+    def negate(self):
+        """self * -1"""
+        self = self * -1.0
+
+
+    def negated(self):
+        return Point(self.x*-1.0, self.y * -1.0)
+
+
+    def __str__(self):
+        """(x,y)"""
+        return '(%f,%f)' % (self.x,  self.y)
+
+""" Vector Alias """
+Vector = Point
