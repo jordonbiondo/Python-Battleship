@@ -1,5 +1,6 @@
 * PyBattleship
   PYTHON IS DEAD TO ME
+
   Command Line battleship game, created as a learning experience
 
 ** Future Plans
