@@ -1,6 +1,8 @@
 * PyBattleship
   Command Line battleship game, created as a learning experience
-** Future Features
-*** GUI
-*** Turn Logic
-*** Network Multiplayer
+
+** Future Plans
+   - Gui
+   - Netork Multiplayer
+     
+
